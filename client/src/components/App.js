@@ -18,39 +18,37 @@ import WhishList from './WishList'
 
 
 class App extends Component {
-
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      carfilters:{}
-    }
+    this.state = {
+      carfilters: {},
+    };
   }
 
-  setCarsFilters(carfilters){
-    
-    this.setState({carfilters});
-    
+  setCarsFilters(filters) {
+    this.setState({ carfilters: filters });
   }
 
   render() {
     return (
-         <BrowserRouter >
-            <SharedLayout carsfilters={this.setCarsFilters.bind(this)}>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/home" component={Home} />
-                    <Route exact path="/products" component={ProductsShop} />
-                    <Route exact path="/cars" render={()=><CarShop filters={this.state.carfilters}/> } />
-                    <Route exact path="/carso" component={CarDetails} />                    
-                    <Route exact path="/sellacar" component={SellA_Car} />
-                    {/* <Route exact path="/contactus" component={ContactUs} /> */}
-                    <Route exact path="/products_cart" component={CartFull} />
-                    <Route exact path="/whishlist" component={WhishList} />
-                    <Route exact path="/cars/singlproduct" component={CarShop} />   
-                    <Route exact path="/products/singlproduct" component={ProductsShop} />                       
-              </SharedLayout>
-         </BrowserRouter>
-      
- 
+      <BrowserRouter>
+        <SharedLayout carsfilters={this.setCarsFilters.bind(this)}>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/products" component={ProductsShop} />
+          <Route
+            exact
+            path="/cars"
+            render={() => <CarShop filters={this.state.carfilters} />}
+          />
+          <Route exact path="/carso" component={CarDetails} />
+          <Route exact path="/sellacar" component={SellA_Car} />
+          <Route exact path="/products_cart" component={CartFull} />
+          <Route exact path="/whishlist" component={WhishList} />
+          <Route exact path="/cars/singlproduct" component={CarShop} />
+          <Route exact path="/products/singlproduct" component={ProductsShop} />
+        </SharedLayout>
+      </BrowserRouter>
     );
   }
 }
