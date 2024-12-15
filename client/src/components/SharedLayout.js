@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
-import SearchBarHome from './SearchBarHome'
+// import SearchBarHome from './SearchBarHome'
 
 class SharedLayout extends Component{
   
@@ -30,7 +30,7 @@ class SharedLayout extends Component{
               </div>
             </div>
           </section>
-          <SearchBarHome filters={this.getFilters.bind(this)}/>
+          {/* <SearchBarHome filters={this.getFilters.bi  nd(this)}/> */}
         </div>
       );
     }

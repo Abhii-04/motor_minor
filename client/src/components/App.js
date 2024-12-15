@@ -34,13 +34,13 @@ class App extends Component {
       <BrowserRouter>
         <SharedLayout carsfilters={this.setCarsFilters.bind(this)}>
           <Route exact path="/" component={Home} />
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/home" render = {() => <Home filters={this.state.carfilters} />} />
           <Route exact path="/products" component={ProductsShop} />
-          <Route
+          {/* <Route
             exact
             path="/cars"
             render={() => <CarShop filters={this.state.carfilters} />}
-          />
+          /> */}
           <Route exact path="/carso" component={CarDetails} />
           <Route exact path="/sellacar" component={SellA_Car} />
           <Route exact path="/products_cart" component={CartFull} />
